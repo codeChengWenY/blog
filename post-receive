@@ -1,1 +1,6 @@
-1
+#!/bin/sh
+git --work-tree=/usr/local/hexo/source_posts --git-dir=/data/wzh-blog/git-repo/blog.git checkout -f;
+cd /usr/local/hexo;
+hexo clean;
+hexo g;
+rm -rf /data/wzh-blog/www/*; cp -r /data/wzh-blog/hexo/public/* /data/wzh-blog/www;
